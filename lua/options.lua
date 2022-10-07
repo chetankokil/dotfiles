@@ -26,7 +26,8 @@ vim.o.swapfile = false
 vim.o.tabstop = 2
 vim.o.updatetime = 1000 -- affects CursorHold and subsequently things like highlighting Code Actions.
 vim.o.wrap = false
-vim.o.foldmethod = "syntax"
+vim.o.foldmethod = "indent"
+vim.o.foldenable = false
 
 if vim.fn.has("termguicolors") == 1 then
   vim.o.termguicolors = true

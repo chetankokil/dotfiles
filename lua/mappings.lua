@@ -42,8 +42,31 @@ map("n", "<leader>fb", [[<cmd>lua require('telescope.builtin').buffers()<cr>]])
 map("n", "<leader>fh", [[<cmd>lua require('telescope.builtin').help_tags()<cr>]])
 map("n", "<leader>mc", [[<cmd>lua require('telescope').extensions.metals.commands()<cr>]])
 map("n", "<leader>fd", [[<cmd>lua require('telescope.builtin').diagnostics()<cr>]])
+map("n", "<leader>ffb", [[<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>]])
+
 
 map("x", "K", ":move '<-2<CR>gv-gv")
 map("x", "J", ":move '>+1<CR>gv-gv")
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+map("n", "Y", "y$")
+map("n","<C-a>", "gg<S-v>G")
+
+
+-- nvim-tree toggle
+map("n", "<leader>n" , ":NvimTreeToggle<cr>" , { noremap = true })
+
+
+-- split windows
+map("n", "ss", ":split<Return><C-w>w", { silent = true })
+map("n", "sv", ":vsplit<Return><C-w>w", { silent = true})
+
+
+-- move windows
+map("n", "<Space>" ,"<C-w>w")
+map("", "s<left>" ,"<C-w>h")
+map("", "s<up>" ,"<C-w>k")
+map("", "s<down>" ,"<C-w>j")
+map("n", "s<right>" ,"<C-w>l")
+
+

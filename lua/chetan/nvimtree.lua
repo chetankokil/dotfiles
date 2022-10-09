@@ -9,7 +9,7 @@ nvim_tree.setup {
     width = 45,
     side = "left", hide_root_folder = true,
   },
-  open_on_setup=false,
+  open_on_setup=true,
   disable_netrw = true,
   hijack_cursor = true,
   update_cwd = false,

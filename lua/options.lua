@@ -6,6 +6,7 @@ vim.o.backup = false
 vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.cursorline = true
+vim.o.cursorcolumn = true
 vim.o.dictionary = "/usr/share/dict/words"
 vim.o.expandtab = true
 vim.o.grepprg = "rg --vimgrep"

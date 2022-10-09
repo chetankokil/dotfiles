@@ -36,7 +36,7 @@ map("n", "<leader>dsi", [[<cmd>lua require"dap".step_into()<CR>]])
 map("n", "<leader>dl", [[<cmd>lua require"dap".run_last()<CR>]])
 
 
-map("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files()<cr>]])
+map("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files({ cwd = vim.fn.expand('%:p:h') })<cr>]])
 map("n", "<leader>fg", [[<cmd>lua require('telescope.builtin').live_grep()<cr>]])
 map("n", "<leader>fb", [[<cmd>lua require('telescope.builtin').buffers()<cr>]])
 map("n", "<leader>fh", [[<cmd>lua require('telescope.builtin').help_tags()<cr>]])
@@ -69,4 +69,5 @@ map("", "s<up>" ,"<C-w>k")
 map("", "s<down>" ,"<C-w>j")
 map("n", "s<right>" ,"<C-w>l")
 
-
+map("n","<Tab>", ":tabn<cr>")
+map("n","<S-Tab>", ":tabp<cr>")

@@ -27,6 +27,8 @@ return require('packer').startup(function(use)
 
   use 'crispgm/nvim-tabline'
  
+  use 'mfussenegger/nvim-lint'
+
   use 'RRethy/vim-illuminate' 
   use {
       'goolord/alpha-nvim',
@@ -86,6 +88,11 @@ return require('packer').startup(function(use)
       }
     end 
   }
+
+  use { 'akinsho/bufferline.nvim',
+        tag = "v2.*", 
+        requires = 'kyazdani42/nvim-web-devicons'
+    }
 
   use {
     'nvim-lualine/lualine.nvim',

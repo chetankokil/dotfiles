@@ -5,10 +5,15 @@ vim.opt_global.completeopt = { "menu", "noinsert", "noselect" }
 vim.opt_global.shortmess:append("c")
 
 --local
+vim.opt.clipboard:append { 'unnamedplus' }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.updatetime = 250
 vim.g.do_filetype_lua = 1
+vim.g.sonokai_style = 'maia'
+vim.g.sonokai_better_performance = 1
+vim.g.sonokai_enable_italic = 1
+
 
 vim.cmd('highlight Normal guibg=none')
 vim.cmd('highlight TelescopeNormal guibg=none')
@@ -49,3 +54,5 @@ cmd([[augroup end]])
 cmd [[autocmd BufWritePre * lua vim.lsp.buf.format{async = true}]]
 --cmd([[command! Format lua vim.lsp.buf.formatting()]])
 vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]])
+
+

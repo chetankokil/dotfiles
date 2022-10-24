@@ -7,6 +7,31 @@ local function map(mode, lhs, rhs, opts)
 end
 
 
+local builtin = require 'telescope.builtin'
+local Path = require('plenary.path')
+local action_state = require('telescope.actions.state')
+
+local function go_up_level_mappings(_, map)
+  map('i', "<C-u>", function(prompt_bufnr)
+    local picker = action_state.get_current_picker(prompt_bufnr)
+    local prompt = action_state.get_current_line()
+
+    local cwd = Path:new(picker.cwd or ".")
+    local parent = cwd:parent().filename
+
+    picker:close_existing_pickers()
+    builtin.find_files({
+      cwd = parent,
+      attach_mappings = go_up_level_mappings,
+      default_text = prompt,
+      max_results = 50,
+    })
+  end)
+  return true
+end
+
+
+
 -- LSP
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
@@ -36,14 +61,16 @@ map("n", "<leader>dsi", [[<cmd>lua require"dap".step_into()<CR>]])
 map("n", "<leader>dl", [[<cmd>lua require"dap".run_last()<CR>]])
 
 
-map("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files({ cwd = vim.fn.expand('%:p:h') })<cr>]])
+map("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files()<cr>]])
+map("n", "<Leader>fr", ":Telescope oldfiles<CR>", { noremap = true, silent = true })
 map("n", "<leader>fg", [[<cmd>lua require('telescope.builtin').live_grep()<cr>]])
 map("n", "<leader>fb", [[<cmd>lua require('telescope.builtin').buffers()<cr>]])
 map("n", "<leader>fh", [[<cmd>lua require('telescope.builtin').help_tags()<cr>]])
 map("n", "<leader>mc", [[<cmd>lua require('telescope').extensions.metals.commands()<cr>]])
 map("n", "<leader>fd", [[<cmd>lua require('telescope.builtin').diagnostics()<cr>]])
 map("n", "<leader>ffb", [[<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>]])
-
+map("n", "<leader>ffd", "<cmd>GrepInDirectory<CR>", { noremap = true, silent = true })
+map("n", "<leader>pd", "<cmd>FileInDirectory<CR>", { noremap = true, silent = true })
 
 map("x", "K", ":move '<-2<CR>gv-gv")
 map("x", "J", ":move '>+1<CR>gv-gv")

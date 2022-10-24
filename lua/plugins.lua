@@ -5,9 +5,21 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
+
+cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]])
+
 cmd([[packadd packer.nvim]])
 return require('packer').startup(function(use)
+
+
   use 'wbthomason/packer.nvim'
+
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   use({
     "hrsh7th/nvim-cmp",
@@ -17,6 +29,7 @@ return require('packer').startup(function(use)
       { "hrsh7th/vim-vsnip" },
     },
   })
+
   use({
     "scalameta/nvim-metals",
     requires = {
@@ -26,14 +39,19 @@ return require('packer').startup(function(use)
   })
 
   use 'crispgm/nvim-tabline'
- 
+  use "lukas-reineke/indent-blankline.nvim"
+  use 'tpope/vim-commentary'
+  
+  --  use 'mfussenegger/nvim-jdtls'
+
   use 'mfussenegger/nvim-lint'
 
   use 'RRethy/vim-illuminate' 
   use {
       'goolord/alpha-nvim',
+      requires = { 'kyazdani42/nvim-web-devicons' },
       config = function()
-        require('chetan.alpha')
+        require'alpha'.setup(require'alpha.themes.dashboard'.config) 
       end
 
   }
@@ -47,22 +65,19 @@ return require('packer').startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "ray-x/lsp_signature.nvim"
   use "SmiteshP/nvim-navic"
-  use "simrat39/symbols-outline.nvim"
-  use "b0o/SchemaStore.nvim"
+  use ({"simrat39/symbols-outline.nvim",
+        config = function() 
+          require("symbols-outline").setup()
+        end
+      })
+  -- use "b0o/SchemaStore.nvim"
   -- use "github/copilot.vim"
 
-  use {
-    "glepnir/dashboard-nvim",
-     config = function()
-       require("chetan.dashboard").setup()
-     end,
-  }
+
 
   use 'simrat39/rust-tools.nvim'
 
@@ -77,14 +92,18 @@ return require('packer').startup(function(use)
 
   use({ "sheerun/vim-polyglot" })
 
+  -- colorschemes
   use "rebelot/kanagawa.nvim"
+  use { "ellisonleao/gruvbox.nvim" }
+  use { "sainnhe/sonokai" } 
+  
 
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
       require("toggleterm").setup {
         size = 55,
         open_mapping = [[<c-\>]],
         shade_filetypes = {},
-        direction = 'vertical',
+        direction = 'float',
       }
     end 
   }
@@ -103,3 +122,4 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
+

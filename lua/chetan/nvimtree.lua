@@ -4,6 +4,9 @@ if not present then
   return
 end
 
+
+vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
+
 nvim_tree.setup {
   view = {
     width = 45,
@@ -18,6 +21,14 @@ nvim_tree.setup {
     auto_open = true,
   },
   renderer = {
+    icons = {
+      glyphs = {
+        folder = {
+           arrow_closed = "",
+          arrow_open = "",
+        },
+      },
+    },
     highlight_opened_files="name",
     indent_markers = {
       enable = true,

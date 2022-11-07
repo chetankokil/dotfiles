@@ -38,7 +38,7 @@ vim.cmd('highlight Keyword guifg=#81A1C1')
 vim.diagnostic.config({ virtual_text = false })
 
 cmd([[colorscheme kanagawa]])
-
+-- cmd[[highlight ColorColumn guibg=lightgrey]]
 
 -- LSP
 cmd([[augroup lsp]])

@@ -1,10 +1,12 @@
 -- completion related settings
 -- This is similiar to what I use
 local cmp = require("cmp")
+
 cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "vsnip" },
+    { name = "path" },
   },
   snippet = {
     expand = function(args)

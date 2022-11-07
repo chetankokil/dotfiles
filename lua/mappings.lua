@@ -30,8 +30,6 @@ local function go_up_level_mappings(_, map)
   return true
 end
 
-
-
 -- LSP
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
@@ -71,14 +69,17 @@ map("n", "<leader>fd", [[<cmd>lua require('telescope.builtin').diagnostics()<cr>
 map("n", "<leader>ffb", [[<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>]])
 map("n", "<leader>ffd", "<cmd>GrepInDirectory<CR>", { noremap = true, silent = true })
 map("n", "<leader>pd", "<cmd>FileInDirectory<CR>", { noremap = true, silent = true })
-
+map("n", "<leader>ds", ":SymbolsOutline<CR>", {noremap = true, silent = true})
 map("x", "K", ":move '<-2<CR>gv-gv")
 map("x", "J", ":move '>+1<CR>gv-gv")
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 map("n", "Y", "y$")
 map("n","<C-a>", "gg<S-v>G")
-
+map("n","<C-/>", ":Commentary<CR>", {noremap = true, silent = true})
+map("v","<C-/>", ":Commentary<CR>", {noremap = true, silent = true})
+map('v', '<leader>D', '"_D', opts) -- delete into blackhole register
+map('v', '<leader>dd', '"_dd', opts) -- TODO dont walk 1 line down from eol
 
 -- nvim-tree toggle
 map("n", "<leader>n" , ":NvimTreeToggle<cr>" , { noremap = true })

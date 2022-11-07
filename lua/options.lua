@@ -16,7 +16,9 @@ vim.o.lazyredraw = true
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.scrolloff = 5
-vim.o.shiftwidth = 2
+vim.o.shiftwidth = 4
+vim.o.hlsearch = false
+vim.o.incsearch = true
 vim.o.showmatch = true
 vim.o.signcolumn = "yes"
 vim.o.smartcase = true
@@ -25,15 +27,16 @@ vim.o.smartindent = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
-vim.o.tabstop = 2
-vim.o.updatetime = 1000 -- affects CursorHold and subsequently things like highlighting Code Actions.
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.updatetime = 100 -- affects CursorHold and subsequently things like highlighting Code Actions.
 vim.o.wrap = false
 vim.o.foldmethod = "indent"
 vim.o.foldenable = false
--- vim.opt.list = true
+vim.opt.listchars = 'tab:⇨|,nbsp:␣,trail:‗,extends:>,precedes:<' --eol:↵, tab:|⇆⇥_, tab:‗‗,
+vim.opt.list = true
 -- vim.opt.listchars:append "space:⋅"
 -- vim.opt.listchars:append "eol:↴"
-
 
 if vim.fn.has("termguicolors") == 1 then
   vim.o.termguicolors = true

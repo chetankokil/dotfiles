@@ -40,6 +40,30 @@ return require('packer').startup(function(use)
     },
   })
 
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"},
+      config = function()
+        require("dapui").setup({
+          layouts = {
+              {
+                  elements = {
+                      { id = "scopes", size = 0.25 },
+                      { id = "breakpoints", size = 0.25 },
+                      { id = "stacks", size = 0.25 },
+                      { id = "watches", size = 0.25 },
+                  },
+                  size = 40,
+                  position = "left",
+              },
+              {
+                  elements = {},
+                  size = 10,
+                  position = "bottom",
+              },
+          },
+      })
+      end
+  }
+
   use 'crispgm/nvim-tabline'
   use "lukas-reineke/indent-blankline.nvim"
   use 'tpope/vim-commentary'
@@ -98,7 +122,7 @@ return require('packer').startup(function(use)
   use({ "sheerun/vim-polyglot" })
 
   -- colorschemes
-  use "rebelot/kanagawa.nvim"
+  use { "rebelot/kanagawa.nvim" }
   use { "ellisonleao/gruvbox.nvim" }
   use { "sainnhe/sonokai" } 
   

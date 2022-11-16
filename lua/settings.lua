@@ -15,8 +15,6 @@ vim.g.sonokai_better_performance = 1
 vim.g.sonokai_enable_italic = 1
 
 
-vim.cmd('highlight Normal guibg=none')
-vim.cmd('highlight TelescopeNormal guibg=none')
 vim.cmd('highlight TelescopePreviewNormal guibg=none')
 vim.cmd('highlight TelescopeBorder guibg=none')
 vim.cmd('highlight NvimTreeNormal guibg=none')
@@ -27,18 +25,19 @@ vim.cmd('highlight VertSplit guibg=none')
 vim.cmd('highlight AlphaHeader guifg=#81a1c1')
 -- vim.cmd('highlight Comment gui=italic')
 vim.cmd('highlight AlphaFooter guifg=#81a1c1')
-vim.cmd('highlight Keyword guifg=#575268')
+-- vim.cmd('highlight Keyword guifg=#575268')
 vim.cmd('highlight Statusline guibg=none')
 vim.cmd('highlight StatuslineNC guibg=none')
 vim.cmd('highlight BufferLineModified guibg=Tabline guifg=#A3BE8C')
 -- vim.cmd('highlight BufferLineModified guibg=#2e3440 guifg=#A3BE8C')
 vim.cmd('highlight BufferLineModifiedSelected guifg=#A3BE8C guibg=#2e3440')
 -- vim.cmd('highlight BufferLineModifiedSelected guifg=#A3BE8C guibg=Tabline')
-vim.cmd('highlight Keyword guifg=#81A1C1')
+-- vim.cmd('highlight Keyword guifg=#81A1C1')
 vim.diagnostic.config({ virtual_text = false })
 
-cmd([[colorscheme kanagawa]])
--- cmd[[highlight ColorColumn guibg=lightgrey]]
+cmd([[colorscheme sonokai]])
+cmd[[highlight Normal guibg=0 ctermbg=0]]
+cmd[[highlight CursorLine guibg=0]]
 
 -- LSP
 cmd([[augroup lsp]])
@@ -48,6 +47,7 @@ cmd([[autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc]])
 -- but it may also conflict if you are using something like nvim-jdtls which also works on a java filetype
 -- autocmd.
 cmd([[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]])
+-- cmd([[au FileType dap-repl lua require('dap.ext.autocompl').attach()]])
 cmd([[augroup end]])
 
 -- If you want a :Format command this is useful

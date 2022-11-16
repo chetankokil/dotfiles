@@ -50,13 +50,14 @@ map("n", "]c", "<cmd>lua vim.diagnostic.goto_next { wrap = false }<CR>")
 
 -- Example mappings for usage with nvim-dap. If you don't use that, you can
 -- skip these
-map("n", "<leader>dc", [[<cmd>lua require"dap".continue()<CR>]])
+map("n", "<F5>", [[<cmd>lua require"dap".continue()<CR>]])
 map("n", "<leader>dr", [[<cmd>lua require"dap".repl.toggle()<CR>]])
-map("n", "<leader>dK", [[<cmd>lua require"dap.ui.widgets".hover()<CR>]])
-map("n", "<leader>dt", [[<cmd>lua require"dap".toggle_breakpoint()<CR>]])
-map("n", "<leader>dso", [[<cmd>lua require"dap".step_over()<CR>]])
-map("n", "<leader>dsi", [[<cmd>lua require"dap".step_into()<CR>]])
+map("n", "<leader>b", [[<cmd>lua require"dap".toggle_breakpoint()<CR>]])
+map("n", "<F10>", [[<cmd>lua require"dap".step_over()<CR>]])
+map("n", "<F11>", [[<cmd>lua require"dap".step_into()<CR>]])
+map("n", "<F12>", [[<cmd>lua require"dap".step_out()<CR>]])
 map("n", "<leader>dl", [[<cmd>lua require"dap".run_last()<CR>]])
+map("n", "<leader>dut", [[<cmd>lua require"dapui".toggle()<CR>]])
 
 
 map("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files()<cr>]])

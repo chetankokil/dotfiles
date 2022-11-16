@@ -48,4 +48,5 @@ local rt = {
     },
 }
 
+nvim_lsp.pyright.setup{}
 require('rust-tools').setup(rt)

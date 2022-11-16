@@ -22,10 +22,25 @@ nvim_tree.setup {
   },
   renderer = {
     icons = {
+      show = {
+        git = true,
+	    file = true,
+	    folder = false,
+	    folder_arrow = true,
+      },
       glyphs = {
         folder = {
            arrow_closed = "",
           arrow_open = "",
+        },
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "⌥",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "⊖",
+          ignored = "◌",
         },
       },
     },

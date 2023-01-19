@@ -20,7 +20,7 @@ vim.o.shiftwidth = 4
 vim.o.hlsearch = false
 vim.o.incsearch = true
 vim.o.showmatch = true
-vim.o.signcolumn = "yes"
+vim.o.signcolumn = "auto:3"
 vim.o.smartcase = true
 vim.o.smartindent = true
 -- vim.o.spell = true
@@ -35,6 +35,7 @@ vim.o.foldmethod = "indent"
 vim.o.foldenable = false
 vim.opt.listchars = 'tab:⇨|,nbsp:␣,trail:‗,extends:>,precedes:<' --eol:↵, tab:|⇆⇥_, tab:‗‗,
 vim.opt.list = true
+vim.opt.cmdheight = 0
 -- vim.opt.listchars:append "space:⋅"
 -- vim.opt.listchars:append "eol:↴"
 

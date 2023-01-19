@@ -21,6 +21,11 @@ return require('packer').startup(function(use)
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
+  use { -- Additional text objects via treesitter
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  }
+
   use({
     "hrsh7th/nvim-cmp",
     requires = {
@@ -29,7 +34,20 @@ return require('packer').startup(function(use)
       { "hrsh7th/vim-vsnip" },
       {'hrsh7th/cmp-path'},
       {'hrsh7th/cmp-cmdline'},
+      {'PaterJason/cmp-conjure'},
     },
+  })
+
+  use({
+    "princejoogie/dir-telescope.nvim",
+    -- telescope.nvim is a required dependency
+    requires = {"nvim-telescope/telescope.nvim"},
+    config = function()
+      require("dir-telescope").setup({
+        hidden = true,
+        respect_gitignore = true,
+      })
+    end,
   })
 
   use({
@@ -84,8 +102,13 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { "nvim-lua/popup.nvim" },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope-fzy-native.nvim" }, }
   }
+
+  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
@@ -108,6 +131,10 @@ return require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
 
+  -- clojure
+  use 'Olical/conjure'
+  use 'dmac/vim-cljfmt'
+
   use 'simrat39/rust-tools.nvim'
 
   use({ "kyazdani42/nvim-web-devicons" })
@@ -121,21 +148,30 @@ return require('packer').startup(function(use)
 
   use({ "sheerun/vim-polyglot" })
 
+  -- git related
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb'
+  use 'lewis6991/gitsigns.nvim'
+
   -- colorschemes
   use { "rebelot/kanagawa.nvim" }
   use { "ellisonleao/gruvbox.nvim" }
-  use { "sainnhe/sonokai" } 
-  
+  use { "sainnhe/sonokai" }  
+  use { "navarasu/onedark.nvim" }
+use({
+    'rose-pine/neovim',
+    as = 'rose-pine'
+  })
 
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-      require("toggleterm").setup {
-        size = 55,
-        open_mapping = [[<c-\>]],
-        shade_filetypes = {},
-        direction = 'float',
-      }
-    end 
-  }
+  -- use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  --     require("toggleterm").setup {
+  --       size = 55,
+  --       open_mapping = [[<c-\>]],
+  --       shade_filetypes = {},
+  --       direction = 'float',
+  --     }
+  --   end 
+  -- }
 
   use { 'akinsho/bufferline.nvim',
         tag = "v2.*", 

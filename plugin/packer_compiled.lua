@@ -90,6 +90,11 @@ _G.packer_plugins = {
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
+  ["cmp-conjure"] = {
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/cmp-conjure",
+    url = "https://github.com/PaterJason/cmp-conjure"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -104,6 +109,22 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
+  conjure = {
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/conjure",
+    url = "https://github.com/Olical/conjure"
+  },
+  ["dir-telescope.nvim"] = {
+    config = { "\27LJ\2\n]\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\vhidden\2\22respect_gitignore\2\nsetup\18dir-telescope\frequire\0" },
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/dir-telescope.nvim",
+    url = "https://github.com/princejoogie/dir-telescope.nvim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["gruvbox.nvim"] = {
     loaded = true,
@@ -157,7 +178,7 @@ _G.packer_plugins = {
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-dap-ui"] = {
-    config = { "\27LJ\2\nØ\2\0\0\a\0\f\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\3\0005\4\a\0004\5\5\0005\6\3\0>\6\1\0055\6\4\0>\6\2\0055\6\5\0>\6\3\0055\6\6\0>\6\4\5=\5\b\4>\4\1\0035\4\t\0004\5\0\0=\5\b\4>\4\2\3=\3\v\2B\0\2\1K\0\1\0\flayouts\1\0\0\1\0\2\tsize\3\n\rposition\vbottom\relements\1\0\2\tsize\3(\rposition\tleft\1\0\2\aid\fwatches\tsize\4\0ÄÄ¿˛\3\1\0\2\aid\vstacks\tsize\4\0ÄÄ¿˛\3\1\0\2\aid\16breakpoints\tsize\4\0ÄÄ¿˛\3\1\0\2\aid\vscopes\tsize\4\0ÄÄ¿˛\3\nsetup\ndapui\frequire\0" },
+    config = { "\27LJ\2\nØ\2\0\0\a\0\f\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\3\0005\4\a\0004\5\5\0005\6\3\0>\6\1\0055\6\4\0>\6\2\0055\6\5\0>\6\3\0055\6\6\0>\6\4\5=\5\b\4>\4\1\0035\4\t\0004\5\0\0=\5\b\4>\4\2\3=\3\v\2B\0\2\1K\0\1\0\flayouts\1\0\0\1\0\2\rposition\vbottom\tsize\3\n\relements\1\0\2\rposition\tleft\tsize\3(\1\0\2\tsize\4\0ÄÄ¿˛\3\aid\fwatches\1\0\2\tsize\4\0ÄÄ¿˛\3\aid\vstacks\1\0\2\tsize\4\0ÄÄ¿˛\3\aid\16breakpoints\1\0\2\tsize\4\0ÄÄ¿˛\3\aid\vscopes\nsetup\ndapui\frequire\0" },
     loaded = true,
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
@@ -197,10 +218,22 @@ _G.packer_plugins = {
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-textobjects"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -211,6 +244,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
@@ -233,21 +276,38 @@ _G.packer_plugins = {
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
     url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
+  ["telescope-fzf-native.nvim"] = {
+    cond = { true },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/opt/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope-fzy-native.nvim"] = {
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["toggleterm.nvim"] = {
-    config = { "\27LJ\2\nÅ\1\0\0\4\0\5\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\2B\0\2\1K\0\1\0\20shade_filetypes\1\0\3\17open_mapping\n<c-\\>\tsize\0037\14direction\nfloat\nsetup\15toggleterm\frequire\0" },
+  ["vim-cljfmt"] = {
     loaded = true,
-    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/vim-cljfmt",
+    url = "https://github.com/dmac/vim-cljfmt"
   },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-illuminate"] = {
     loaded = true,
@@ -259,6 +319,11 @@ _G.packer_plugins = {
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
   },
+  ["vim-rhubarb"] = {
+    loaded = true,
+    path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+    url = "https://github.com/tpope/vim-rhubarb"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/Users/chetankokil/.local/share/nvim/site/pack/packer/start/vim-vsnip",
@@ -267,26 +332,35 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\nÅ\1\0\0\4\0\5\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\2B\0\2\1K\0\1\0\20shade_filetypes\1\0\3\17open_mapping\n<c-\\>\tsize\0037\14direction\nfloat\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-try_loadstring("\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
-time([[Config for alpha-nvim]], false)
--- Config for: nvim-dap-ui
-time([[Config for nvim-dap-ui]], true)
-try_loadstring("\27LJ\2\nØ\2\0\0\a\0\f\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\3\0005\4\a\0004\5\5\0005\6\3\0>\6\1\0055\6\4\0>\6\2\0055\6\5\0>\6\3\0055\6\6\0>\6\4\5=\5\b\4>\4\1\0035\4\t\0004\5\0\0=\5\b\4>\4\2\3=\3\v\2B\0\2\1K\0\1\0\flayouts\1\0\0\1\0\2\tsize\3\n\rposition\vbottom\relements\1\0\2\tsize\3(\rposition\tleft\1\0\2\aid\fwatches\tsize\4\0ÄÄ¿˛\3\1\0\2\aid\vstacks\tsize\4\0ÄÄ¿˛\3\1\0\2\aid\16breakpoints\tsize\4\0ÄÄ¿˛\3\1\0\2\aid\vscopes\tsize\4\0ÄÄ¿˛\3\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
-time([[Config for nvim-dap-ui]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-dap-ui
+time([[Config for nvim-dap-ui]], true)
+try_loadstring("\27LJ\2\nØ\2\0\0\a\0\f\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\3\0005\4\a\0004\5\5\0005\6\3\0>\6\1\0055\6\4\0>\6\2\0055\6\5\0>\6\3\0055\6\6\0>\6\4\5=\5\b\4>\4\1\0035\4\t\0004\5\0\0=\5\b\4>\4\2\3=\3\v\2B\0\2\1K\0\1\0\flayouts\1\0\0\1\0\2\rposition\vbottom\tsize\3\n\relements\1\0\2\rposition\tleft\tsize\3(\1\0\2\tsize\4\0ÄÄ¿˛\3\aid\fwatches\1\0\2\tsize\4\0ÄÄ¿˛\3\aid\vstacks\1\0\2\tsize\4\0ÄÄ¿˛\3\aid\16breakpoints\1\0\2\tsize\4\0ÄÄ¿˛\3\aid\vscopes\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
+time([[Config for nvim-dap-ui]], false)
 -- Config for: symbols-outline.nvim
 time([[Config for symbols-outline.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20symbols-outline\frequire\0", "config", "symbols-outline.nvim")
 time([[Config for symbols-outline.nvim]], false)
+-- Config for: dir-telescope.nvim
+time([[Config for dir-telescope.nvim]], true)
+try_loadstring("\27LJ\2\n]\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\vhidden\2\22respect_gitignore\2\nsetup\18dir-telescope\frequire\0", "config", "dir-telescope.nvim")
+time([[Config for dir-telescope.nvim]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
+-- Conditional loads
+time([[Conditional loading of telescope-fzf-native.nvim]], true)
+  require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)
+time([[Conditional loading of telescope-fzf-native.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -58,3 +58,5 @@ require("lspconfig").gopls.setup {
 		},
 	},
 }
+
+require('lspconfig').jdtls.setup{}

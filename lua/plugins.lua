@@ -86,7 +86,8 @@ return require('packer').startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use 'tpope/vim-commentary'
   
-  --  use 'mfussenegger/nvim-jdtls'
+  use 'mfussenegger/nvim-jdtls'
+  --
 
   use 'mfussenegger/nvim-lint'
 
@@ -132,8 +133,8 @@ return require('packer').startup(function(use)
   }
 
   -- clojure
-  use 'Olical/conjure'
-  use 'dmac/vim-cljfmt'
+  -- use 'Olical/conjure'
+  -- use 'dmac/vim-cljfmt'
 
   use 'simrat39/rust-tools.nvim'
 
@@ -158,10 +159,10 @@ return require('packer').startup(function(use)
   use { "ellisonleao/gruvbox.nvim" }
   use { "sainnhe/sonokai" }  
   use { "navarasu/onedark.nvim" }
-use({
-    'rose-pine/neovim',
-    as = 'rose-pine'
-  })
+  use({
+      'rose-pine/neovim',
+      as = 'rose-pine'
+    })
 
   -- use {"akinsho/toggleterm.nvim", tag = '*', config = function()
   --     require("toggleterm").setup {

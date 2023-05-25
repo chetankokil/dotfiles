@@ -152,23 +152,6 @@ return {
   -- add rust-tools && rust_analyzer to lsp config
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      "simrat39/rust-tools.nvim",
-    },
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        rust_analyzer = {},
-      },
-      setup = {
-        rust_analyzer = function(_, opts)
-          require("rust-tools").setup({ server = opts })
-          return true
-        end,
-      },
-    },
   },
 
   -- add tsserver and setup with typescript.nvim instead of lspconfig

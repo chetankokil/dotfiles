@@ -22,7 +22,7 @@ return {
           }
           require("mason-nvim-dap").default_setup(config) -- don't forget this!
         end,
-        go = function(config)
+        --[[ go = function(config)
           config.adapters = {
             type = "server",
             port = "${port}",
@@ -43,7 +43,7 @@ return {
             cwd = "${workspaceFolder}",
             stopOnEntry = false,
           }
-        end,
+        end, --]]
       },
     })
   end,
